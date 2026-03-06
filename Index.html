@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Application Form</title>
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+<div class="center-aligner">
+<div class="main-container">
+<h1>Job Application Form</h1>
+
+<div id="form-container">
+
+<!-- BASIC DETAILS -->
+<div class="form-section active" id="basic">
+<h3>Basic Details</h3>
+<form id="basicForm">
+<div class="form-row">
+<div class="form-field">
+<label for="firstName">First Name *</label>
+<input type="text" id="firstName" name="firstName" required>
+</div>
+<div class="form-field">
+<label for="lastName">Last Name *</label>
+<input type="text" id="lastName" name="lastName" required>
+</div>
+<div class="form-field">
+<label for="email">Email *</label>
+<input type="text" id="email" name="email" required>
+</div>
+<div class="form-field">
+<label for="phone">Phone *</label>
+<input type="text" id="phone" name="phone" required pattern="[0-9]{10}">
+</div>
+<div class="form-field">
+<label>Gender *</label>
+<div>
+<input type="radio" id="male" name="gender" value="Male" required> <label for="male">Male</label>
+<input type="radio" id="female" name="gender" value="Female"> <label for="female">Female</label>
+</div>
+</div>
+<!-- address line 1 -->
+ <div class="form-field">
+<label for="adress1">adress 1 *</label>
+<input type="text" id="address1" name="address1" required ">
+</div>
+<!-- address line 2 -->
+ <div class="form-field">
+<label for="address2">address 2  *</label>
+<input type="text" id="address2" name="address2"">
+</div>
+
+<!-- city -->
+ <div class="form-field">
+<label for="city">city  *</label>
+<input type="text" id="city" name="city"">
+</div>
+
+ <div class="form-field">
+
+<label for="state">state  *</label>
+<select id="states" name="states">
+    <option>Select state</option>
+    <option value="AN">Andaman and Nicobar Islands</option>
+    <option value="AP">Andhra Pradesh</option>
+    <option value="AR">Arunachal Pradesh</option>
+    <option value="AS">Assam</option>
+    <option value="BR">Bihar</option>
+    <option value="CH">Chandigarh</option>
+    <option value="CT">Chhattisgarh</option>
+    <option value="DN">Dadra and Nagar Haveli</option>
+    <option value="DD">Daman and Diu</option>
+    <option value="DL">Delhi</option>
+    <option value="GA">Goa</option>
+    <option value="GJ">Gujarat</option>
+    <option value="HR">Haryana</option>
+    <option value="HP">Himachal Pradesh</option>
+    <option value="JK">Jammu and Kashmir</option>
+    <option value="JH">Jharkhand</option>
+    <option value="KA">Karnataka</option>
+    <option value="KL">Kerala</option>
+    <option value="LA">Ladakh</option>
+    <option value="LD">Lakshadweep</option>
+    <option value="MP">Madhya Pradesh</option>
+    <option value="MH">Maharashtra</option>
+    <option value="MN">Manipur</option>
+    <option value="ML">Meghalaya</option>
+    <option value="MZ">Mizoram</option>
+    <option value="NL">Nagaland</option>
+    <option value="OR">Odisha</option>
+    <option value="PY">Puducherry</option>
+    <option value="PB">Punjab</option>
+    <option value="RJ">Rajasthan</option>
+    <option value="SK">Sikkim</option>
+    <option value="TN">Tamil Nadu</option>
+    <option value="TG">Telangana</option>
+    <option value="TR">Tripura</option>
+    <option value="UP">Uttar Pradesh</option>
+    <option value="UT">Uttarakhand</option>
+    <option value="WB">West Bengal</option>
+</select>
+
+</div>
+
+<!-- city -->
+
+ <div class="form-field">
+
+<label for="zipcode">zip code  *</label>
+
+<input type="text" name="zipcode" id="zipcode">
+</div> 
+<div class="form-field">
+
+<label for="dateofbirth">date of birth  *</label>
+
+<input type="date" name="dateofbirth" id="dateofbirth">
+
+</div>
+<div class="form-field">
+
+<label for="relationship">relationship  *</label>
+
+<select id="relationship">
+    <option  >Married</option>
+    <option>Unmarried</option>
+</select>
+
+</div>
+
+
+
+
+</div>
+<input type="submit" name="" value="Save" id="submit"  onclick="getBasicDetails()">
+</form>
+</div>
+
+<!-- EDUCATION -->
+<div class="form-section  id="education">
+    <div class="addRemoveContainer">
+        <h3>Education Details</h3>
+        <div class="Add" id="add-data" onclick="addData()">Add Data</div>
+<div class="remove " id="remove-data" onclick="removeLastData()">Remove Data</div>
+    </div>
+<form id="educationForm">
+<div class="form-row">
+<div class="form-field">
+<label for="degree">Degree *</label>
+<!-- <input type="text" id="degree" name="degree" required> -->
+ <select name="degree" id="degree">
+<option name="">SSC</option>
+<option name="">HSC</option>
+<option name="">Graduate</option>
+<option name="">phd</option>    
+
+</select>
+</div>
+<div class="form-field">
+<label for="board">Board/University *</label>
+<input type="text" id="board" name="board" required>
+</div>
+<div class="form-field">
+<label for="year">Passing Year *</label>
+<input type="text" id="year" name="year" required>
+</div>
+<div class="form-field">
+<label for="percentage">Percentage *</label>
+<input type="text" id="percentage" name="percentage" required>
+</div>
+</div>
+</form>
+<div class="showdata" id="showdata">
+    <!-- <h1>sdkfjklj</h1> -->
+</div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="form-section  " id="experience">
+<h3>Experience</h3>
+ <div class="addRemoveContainer">
+        <h3>Education Details</h3>
+        <div class="Add" id="add-data" onclick="addJobData()">Add Data</div>
+<div class="remove " id="remove-data" onclick="removeJobData()">Remove Data</div>
+    </div>
+<form id="experienceForm">
+<div class="form-row">
+<div class="form-field">
+<label for="company">Company Name *</label>
+<input type="text" id="company" name="company" required>
+</div>
+<div class="form-field">
+<label for="fromDate">From Date *</label>
+<input type="date" id="fromdate" name="fromdate" required>
+</div>
+<div class="form-field">
+<label for="years">To date</label>
+<input type="date" id="todate" name="todate" required>
+</div>
+<div class="form-field">
+<label for="annual package">annual package *</label>
+<input type="text" id="annualPackage" name="annualPackage" required>
+</div>
+<div class="form-field">
+<label for="Reason to leave">leave Reason *</label>
+<input type="leaveReason" id="leaveReason" name="leaveReason" required>
+</div>
+<div class="form-field">
+<label for="refContact">ref cntc*</label>
+<input type="text" id="refContact" name="refContact" required>
+</div>
+<div class="form-field">
+
+<label for="refContact">ref cntc name*</label>
+
+<input type="text" id="refName" name="refName" required>
+
+</div>
+
+</div>
+<input type="submit" id="submitJob" value="submit" ></input >
+</form>
+<div class="showExperienceData" id="showExperienceData">
+    <!-- <h1>sdkfjklj</h1> -->
+</div>
+
+</div>
+
+<!-- LANGUAGE -->
+<div class="form-section " id="language">
+<h3>Language Known</h3>
+
+<form id="languageForm">
+<fieldset>
+<legend>Languages</legend>
+
+<div class="row">
+<div class="language">
+<label>
+<input type="checkbox" class="language-check" value="hindi"> Hindi
+</label>
+</div>
+
+<div class="options">
+<label><input type="checkbox" class="skill" data-language="hindi" value="read" disabled> Read</label>
+<label><input type="checkbox" class="skill" data-language="hindi" value="write" disabled> Write</label>
+<label><input type="checkbox" class="skill" data-language="hindi" value="speak" disabled> Speak</label>
+</div>
+</div>
+
+
+<div class="row">
+<div class="language">
+<label>
+<input type="checkbox" class="language-check" value="english"> English
+</label>
+</div>
+
+<div class="options">
+<label><input type="checkbox" class="skill" data-language="english" value="read" disabled> Read</label>
+<label><input type="checkbox" class="skill" data-language="english" value="write" disabled> Write</label>
+<label><input type="checkbox" class="skill" data-language="english" value="speak" disabled> Speak</label>
+</div>
+</div>
+
+</fieldset>
+</form>
+</div>
+
+
+
+<div class="form-section">
+<h3>Technologies Known</h3>
+
+<div class="technology-form">
+
+<div class="tech-row">
+<label>
+<input type="checkbox" class="tech-check" value="php"> PHP
+</label>
+
+<label><input type="radio" class="tech-level" name="php-level" value="beginner" data-tech="php" disabled> Beginner</label>
+<label><input type="radio" class="tech-level" name="php-level" value="intermediate" data-tech="php" disabled> Intermediate</label>
+<label><input type="radio" class="tech-level" name="php-level" value="expert" data-tech="php" disabled> Expert</label>
+</div>
+
+
+<div class="tech-row">
+<label>
+<input type="checkbox" class="tech-check" value="java"> Java
+</label>
+
+<label><input type="radio" class="tech-level" name="java-level" value="beginner" data-tech="java" disabled> Beginner</label>
+<label><input type="radio" class="tech-level" name="java-level" value="intermediate" data-tech="java" disabled> Intermediate</label>
+<label><input type="radio" class="tech-level" name="java-level" value="expert" data-tech="java" disabled> Expert</label>
+</div>
+
+
+<div class="tech-row">
+<label>
+<input type="checkbox" class="tech-check" value="react"> React
+</label>
+
+<label><input type="radio" class="tech-level" name="react-level" value="beginner" data-tech="react" disabled> Beginner</label>
+<label><input type="radio" class="tech-level" name="react-level" value="intermediate" data-tech="react" disabled> Intermediate</label>
+<label><input type="radio" class="tech-level" name="react-level" value="expert" data-tech="react" disabled> Expert</label>
+</div>
+
+</div>
+</div>
+
+<div class="form-section" style="width: 100%;gap: 20px;">
+    <div class="form-field" style="width: 100%;" >
+        <div class="form-row" style="width: 100%;display: flex;background: #ffffff;;justify-content: space-between;">
+<label for="referenceName">Name</label><input type="text">
+<label for="referenceContact">Contact</label><input type="text">
+</div>
+<div class="form-row" style="width: 100%;display: flex;background: #ffffff;;justify-content: space-between;"> 
+            <label for="referenceName">Name</label><input type="text">
+            <label for="referenceContact">Contact</label><input type="text">
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- PREFERENCES -->
+<div class="form-section" id="preferences">
+<h3>Preferences</h3>
+<form id="preferencesForm">
+<div class="form-row">
+<div class="form-field">
+<label for="location">Preferred Location *</label>
+<select id="location" required>
+<option value="">Select</option>
+<option>Ahmedabad</option>
+<option>Surat</option>
+<option>New York</option>
+</select>
+</div>
+<div class="form-field">
+<label for="notice">Notice Period *</label>
+<input type="text" id="notice" required>
+</div>
+<div class="form-field">
+<label for="expectedCtc">Expected CTC *</label>
+<input type="text" id="expectedCtc" required>
+</div>
+</div>
+<button type="submit">Submit</button>
+</form>
+</div>
+
+</div>
+
+<div class="navigate">
+<div class="nav-btn" id="prevBtn"><</div>
+<div class="nav-btn" id="nextBtn">></div>
+</div>
+
+</div>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
